@@ -309,6 +309,20 @@ Note:
 
 ## unit tests
 
+```rust
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn any_test_func() {
+      assert_eq!(1, 2)
+```
+
+```sh
+cargo test
+```
+
 ## bdd integration
 
 ## crates
