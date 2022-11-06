@@ -1,8 +1,5 @@
 {
     "scripts": [
-        "plugin/chalkboard/plugin.js",
-        "plugin/reveal.js-menu/menu.js",
-        "plugin.js",
         "lib/mermaid.min.js",
         "lib/reveal-mermaid.js"
         ]
