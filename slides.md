@@ -9,11 +9,11 @@ revealOptions:
 ---
 # Rust
 
-<img src="/media/Rust_programming_language_black_logo.svg" width="500" height="500"  >
+<img src="./media/Rust_programming_language_black_logo.svg" width="500" height="500"  >
 
 # Ferris the crab
 
-<img src="/media/rustacean-flat-happy.png"  >
+<img src="./media/rustacean-flat-happy.png"  >
 
 Unofficial mascot for Rust.
 
@@ -62,7 +62,7 @@ Note:
 
 ## Edsger Dijkstra
 
-<img src="/media/440px-Edsger_Wybe_Dijkstra.jpg"  >
+<img src="./media/440px-Edsger_Wybe_Dijkstra.jpg"  >
 
 ## Edsger Dijkstra
 
@@ -307,6 +307,22 @@ Note:
 
 ## rustdoc
 
+- Dostring convineance
+  
+```rust
+/// This is a docstring
+/// and syntactic sugar with markdown formatting supported
+/// including code examples and graphics (e.g. mermaid)
+#[doc]  // this is the "desugared" doc directive
+```
+
+All documented at: [https://docs.rs](https://docs.rs)
+
+```sh
+cargo doc
+```
+
+
 ## unit tests
 
 ```rust
@@ -327,17 +343,34 @@ cargo test
 
 ## crates
 
-crates.io
+[crates.io](https://crates.io)
+
+```sh
+cargo publish
+```
+
+Manchester Encoding: [Crate](https://crates.io/crates/manchester-code) [Source](https://github.com/almedso/manchester-code) [doc](https://docs.rs/manchester-code/0.2.0/manchester_code/)
 
 ---
 
 # Take aways
+## Take aways
+- Zero Cost Abstractions -> High performance
+## Take aways
+- Zero Cost Abstractions -> High performance
+- Type, Memory & Thread Safety - High functional correctness
+## Take aways
+- Zero Cost Abstractions -> High performance
+- Type, Memory & Thread Safety - High functional correctness
+- Syntactic sugar, doc and test - Easy maintainability
+## Take aways
+- Zero Cost Abstractions -> High performance
+- Type, Memory & Thread Safety - High functional correctness
+- Syntactic sugar, doc and test - Easy maintainability
+- Batteries included - Ease of integration
 
-- Zero Cost Abstractions - high performance
-- Type, Memory & Thread safety - high functional correctness
-- Syntactic sugar, doc and test - high degree maintenance
-- Batteries included - ease of integration
-- Areas of application
-  - PRODUCTION code: embedded, system programming, application services,
-  - Performance driven: webassembly, data science
+# Areas of Application
+
+- Embedded, system programming, application services,
+- Webassembly, data science, machine learning
 
