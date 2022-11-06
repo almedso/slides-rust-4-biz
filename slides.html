@@ -371,6 +371,22 @@ panic!("Crash with backtrace on purpose");
 </script></section><section data-markdown><script type="text/template">
 ## rustdoc
 
+- Dostring convineance
+  
+```rust
+/// This is a docstring
+/// and syntactic sugar with markdown formatting supported
+/// including code examples and graphics (e.g. mermaid)
+#[doc]  // this is the "desugared" doc directive
+```
+
+All documented at: [https://docs.rs](https://docs.rs)
+
+```sh
+cargo doc
+```
+
+
 
 </script></section><section data-markdown><script type="text/template">
 ## unit tests
@@ -397,21 +413,48 @@ cargo test
 </script></section><section data-markdown><script type="text/template">
 ## crates
 
-crates.io
+[crates.io](https://crates.io)
+
+```sh
+cargo publish
+```
+
+Manchester Encoding: [Crate](https://crates.io/crates/manchester-code) [Source](https://github.com/almedso/manchester-code) [doc](https://docs.rs/manchester-code/0.2.0/manchester_code/)
 
 </script></section><section data-markdown><script type="text/template">
 
 
-</script></section></section><section  data-markdown><script type="text/template">
+</script></section></section><section ><section data-markdown><script type="text/template">
 # Take aways
 
-- Zero Cost Abstractions - high performance
-- Type, Memory & Thread safety - high functional correctness
-- Syntactic sugar, doc and test - high degree maintenance
-- Batteries included - ease of integration
-- Areas of application
-  - PRODUCTION code: embedded, system programming, application services,
-  - Performance driven: webassembly, data science
+</script></section><section data-markdown><script type="text/template">
+## Take aways
+- Zero Cost Abstractions -> High performance
+
+</script></section><section data-markdown><script type="text/template">
+## Take aways
+- Zero Cost Abstractions -> High performance
+- Type, Memory & Thread Safety - High functional correctness
+
+</script></section><section data-markdown><script type="text/template">
+## Take aways
+- Zero Cost Abstractions -> High performance
+- Type, Memory & Thread Safety - High functional correctness
+- Syntactic sugar, doc and test - Easy maintainability
+
+</script></section><section data-markdown><script type="text/template">
+## Take aways
+- Zero Cost Abstractions -> High performance
+- Type, Memory & Thread Safety - High functional correctness
+- Syntactic sugar, doc and test - Easy maintainability
+- Batteries included - Ease of integration
+
+
+</script></section></section><section  data-markdown><script type="text/template">
+# Areas of Application
+
+- Embedded, system programming, application services,
+- Webassembly, data science, machine learning
 
 </script></section></div>
     </div>
