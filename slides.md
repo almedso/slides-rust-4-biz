@@ -114,6 +114,13 @@ Type check is the process of verifying and enforcing the constraints of types.
 
 - Limits the needs for source code unit tests
 
+Note:
+
+- **always const** aka context evaluation at compile time
+- opositite **never const** aka context evaluation at runtime
+- **maybe const** evalution at compile time and also at runtime (depending on the calling)
+  [see](https://blog.yoshuawuyts.com/const-syntax/)
+
 ## Simple Types
 
 ## Arrays
