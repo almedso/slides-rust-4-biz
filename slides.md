@@ -17,15 +17,6 @@ revealOptions:
 
 Unofficial mascot for Rust.
 
-# mermaid
-
-```mermaid
-graph TD;
-   A-->B;
-   A-->C;
-   B-->D;
-   C-->D;
-```
 
 # Online
 
@@ -177,7 +168,70 @@ Note:
 - No programming accidents by forgetting check of none existence, emptiness
 - Many convenient functions in std lib
 
+# Memory Safety
 
+## Ownership
+
+```rust
+let a = 5_usize;
+```
+
+```mermaid
+flowchart LR
+   Variable -- owns --> Value
+   a --> 5
+```
+
+## Ownership transfer
+
+```rust
+let b = a;
+```
+
+```mermaid
+flowchart LR
+   a --> out-of-scope
+   b --> 5
+```
+
+## Imuatable borrowing
+
+```rust
+let a = 5_usize;
+let b = &a;
+let c = &b;
+println!("(a, b, c) = ({:?}, {:?}, {:?})", a, b, c);
+/// (a, b, c) = (5, 5, 5)
+```
+
+## Mutable borrowing
+
+```rust
+let mut a = 5_usize;
+{
+    let b = &mut a;  // a mutably borrows its value to b
+    *b += 1;   // a has not access to the value here
+} // b goes out of scope here
+  // therefore borrowing ends here as well
+println!("a = {:?}", a);
+//  a = 6
+```
+
+Note:
+- References have lifetime
+- Lifetime of a reference is not longer than lifetime of the underlying variable
+- Owership, borrowing, lifetime as usual **checked at compile time**
+```
+
+# Thread Safety
+
+- as usual **checked at compile time**
+- handover of variables via move or copy (delegated to ownership)
+- shared data/memory/resources via arc + mutex + refcell/cell
+- message queues (mpsc)
+
+Note:
+- in embedded thread multiple tasks.
 # Syntatic Sugar
 
 In computer science, syntactic sugar is syntax within a programming language that is designed to make things easier to read or to express.
@@ -280,6 +334,13 @@ panic!("Crash with backtrace on purpose");
   - feature management
 - e.g. [Manchester Code](https://crates.io/crates/manchester-code)
 
+## cargo.toml
+
+```toml
+
+```
+
+
 ## Interfaces modules
 
 - public/ private
@@ -293,11 +354,33 @@ Note:
 - reuse release equivalence principle
 - semantic versioning
 
-##
-
 # Baterries included
 
-## cargo
+## rustup
+
+- install/ upgrade /switch compiler/ standard library
+- manage targets (host, cross, webassembly)
+- bootstrap your environment
+
+## cargo build
+
+- Build: `cargo build`
+- Test `cargo test`
+- Run `cargo run -- executable parameters`
+- In the loop: `cargo watch -x test`
+
+- Customizeable via `cargo.toml, `build.rs`
+
+Note:
+- there is nothing else but cargo.toml
+- all dependency mng is there!!!
+- cargo extension to bump version
+- programmatic access to cargo.toml information
+- build.rs needed to bridge to ffi, etc.
+- cargo extension for embedded / flashing objcopy, etc.
+
+
+## cargo other
 
 - fmt
 - clippy
