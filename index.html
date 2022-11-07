@@ -23,7 +23,7 @@
 <img src="./media/Rust_programming_language_black_logo.svg" width="500" height="500"  >
 
 
-</script></section><section  data-markdown><script type="text/template">
+</script></section><section ><section data-markdown><script type="text/template">
 # Ferris the crab
 
 <img src="./media/rustacean-flat-happy.png"  >
@@ -31,8 +31,31 @@
 Unofficial mascot for Rust.
 
 
+</script></section><section data-markdown><script type="text/template">
+## When do developer a good job?
 
-</script></section><section  data-markdown><script type="text/template">
+
+</script></section><section data-markdown><script type="text/template">
+## When do developer a good job?
+1. Deliver a functioning software (spec meet, bug-free)
+
+
+</script></section><section data-markdown><script type="text/template">
+## When do developer a good job?
+1. Deliver a functioning software (spec meet, bug-free)
+2. Maintain the delivery speed (Independent upon the code size)
+
+
+</script></section></section><section ><section data-markdown><script type="text/template">
+# How does Rust help to do a good?
+
+
+</script></section><section data-markdown><script type="text/template">
+## How does Rust help to do a good?
+
+Wait for the take away.
+
+</script></section></section><section  data-markdown><script type="text/template">
 # Online
 
 [Rust](https://play.rust-lang.org/)
@@ -272,10 +295,19 @@ println!("a = {:?}", a);
 <aside class="notes"><ul>
 <li>References have lifetime</li>
 <li>Lifetime of a reference is not longer than lifetime of the underlying variable</li>
-<li>Owership, borrowing, lifetime as usual <strong>checked at compile time</strong>
+<li>Ownership, borrowing, lifetime as usual <strong>checked at compile time</strong>
 ```</li>
 </ul>
-</aside></script></section></section><section  data-markdown><script type="text/template">
+</aside></script></section><section data-markdown><script type="text/template">
+## Memory Safety @ embedded
+
+Peripherals treated as memory with ownership
+
+- Access checked at compile time
+- **No CPU memory protection management at runtime needed**
+
+
+</script></section></section><section  data-markdown><script type="text/template">
 # Thread Safety
 
 - as usual **checked at compile time**
@@ -547,13 +579,52 @@ Manchester Encoding: [Crate](https://crates.io/crates/manchester-code) [Source](
 - Syntactic sugar, doc and test - Easy maintainability
 - Batteries included - Ease of integration
 
+</script></section><section data-markdown><script type="text/template">
+## Take aways
+- Zero Cost Abstractions -> High performance, correctness, maintainability
+- Type, Memory & Thread Safety - High functional correctness
+- Syntactic sugar, doc and test - Easy maintainability
+- Batteries included - Ease of integration
+- Module and crate system - Easy maintainability and reuse
+
 
 </script></section></section><section  data-markdown><script type="text/template">
 # Areas of Application
 
 - Embedded, system programming, application services,
 - Webassembly, data science, machine learning
+- Not for prototyping
+- Mixed environments: Language bindings via ffi/unsafe code
 
+
+
+</script></section><section  data-markdown><script type="text/template">
+# Disadvantages
+
+- Steep learning curve
+  *You argue with the compiler for hours and finally the compiler accepts and
+  all of a sudden the code works and is already clean*
+- No certified compiler yet.
+
+
+</script></section><section  data-markdown><script type="text/template">
+# Advantages
+
+- You can focus on the right abstraction for the problem to solve.
+- No waste of time in build tooling, configuration management, SCA,
+  complicated test frameworks, dis-functional documentation.
+- One community driven evolutionary style guide that can be enforced
+  cargo
+
+
+</script></section><section  data-markdown><script type="text/template">
+# Not touched
+
+- all language features
+  - (e.g. async await, iterators, streams, memory management, ...)
+- Rust Foundation activities
+  - Cybersecurity working group
+  - Compiler evolution
 </script></section></div>
     </div>
 
