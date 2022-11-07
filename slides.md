@@ -17,7 +17,20 @@ revealOptions:
 
 Unofficial mascot for Rust.
 
+## When do developer a good job?
 
+## When do developer a good job?
+1. Deliver a functioning software (spec meet, bug-free)
+
+## When do developer a good job?
+1. Deliver a functioning software (spec meet, bug-free)
+2. Maintain the delivery speed (Independent upon the code size)
+
+# How does Rust help to do a good?
+
+## How does Rust help to do a good?
+
+Wait for the take away.
 # Online
 
 [Rust](https://play.rust-lang.org/)
@@ -220,8 +233,15 @@ println!("a = {:?}", a);
 Note:
 - References have lifetime
 - Lifetime of a reference is not longer than lifetime of the underlying variable
-- Owership, borrowing, lifetime as usual **checked at compile time**
+- Ownership, borrowing, lifetime as usual **checked at compile time**
 ```
+
+## Memory Safety @ embedded
+
+Peripherals treated as memory with ownership
+
+- Access checked at compile time
+- **No CPU memory protection management at runtime needed**
 
 # Thread Safety
 
@@ -451,9 +471,40 @@ Manchester Encoding: [Crate](https://crates.io/crates/manchester-code) [Source](
 - Type, Memory & Thread Safety - High functional correctness
 - Syntactic sugar, doc and test - Easy maintainability
 - Batteries included - Ease of integration
+## Take aways
+- Zero Cost Abstractions -> High performance, correctness, maintainability
+- Type, Memory & Thread Safety - High functional correctness
+- Syntactic sugar, doc and test - Easy maintainability
+- Batteries included - Ease of integration
+- Module and crate system - Easy maintainability and reuse
 
 # Areas of Application
 
 - Embedded, system programming, application services,
 - Webassembly, data science, machine learning
+- Not for prototyping
+- Mixed environments: Language bindings via ffi/unsafe code
 
+
+# Disadvantages
+
+- Steep learning curve
+  *You argue with the compiler for hours and finally the compiler accepts and
+  all of a sudden the code works and is already clean*
+- No certified compiler yet.
+
+# Advantages
+
+- You can focus on the right abstraction for the problem to solve.
+- No waste of time in build tooling, configuration management, SCA,
+  complicated test frameworks, dis-functional documentation.
+- One community driven evolutionary style guide that can be enforced
+  cargo
+
+# Not touched
+
+- all language features
+  - (e.g. async await, iterators, streams, memory management, ...)
+- Rust Foundation activities
+  - Cybersecurity working group
+  - Compiler evolution
