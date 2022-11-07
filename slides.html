@@ -31,17 +31,6 @@
 Unofficial mascot for Rust.
 
 
-</script></section><section  data-markdown><script type="text/template">
-# mermaid
-
-```mermaid
-graph TD;
-   A-->B;
-   A-->C;
-   B-->D;
-   C-->D;
-```
-
 
 </script></section><section  data-markdown><script type="text/template">
 # Online
@@ -223,6 +212,81 @@ if a != b {
 <li>Many convenient functions in std lib</li>
 </ul>
 </aside></script></section></section><section ><section data-markdown><script type="text/template">
+# Memory Safety
+
+
+</script></section><section data-markdown><script type="text/template">
+## Ownership
+
+```rust
+let a = 5_usize;
+```
+
+```mermaid
+flowchart LR
+   Variable -- owns --> Value
+   a --> 5
+```
+
+
+</script></section><section data-markdown><script type="text/template">
+## Ownership transfer
+
+```rust
+let b = a;
+```
+
+```mermaid
+flowchart LR
+   a --> out-of-scope
+   b --> 5
+```
+
+
+</script></section><section data-markdown><script type="text/template">
+## Imuatable borrowing
+
+```rust
+let a = 5_usize;
+let b = &a;
+let c = &b;
+println!("(a, b, c) = ({:?}, {:?}, {:?})", a, b, c);
+/// (a, b, c) = (5, 5, 5)
+```
+
+
+</script></section><section data-markdown><script type="text/template">
+## Mutable borrowing
+
+```rust
+let mut a = 5_usize;
+{
+    let b = &mut a;  // a mutably borrows its value to b
+    *b += 1;   // a has not access to the value here
+} // b goes out of scope here
+  // therefore borrowing ends here as well
+println!("a = {:?}", a);
+//  a = 6
+```
+
+<aside class="notes"><ul>
+<li>References have lifetime</li>
+<li>Lifetime of a reference is not longer than lifetime of the underlying variable</li>
+<li>Owership, borrowing, lifetime as usual <strong>checked at compile time</strong>
+```</li>
+</ul>
+</aside></script></section></section><section  data-markdown><script type="text/template">
+# Thread Safety
+
+- as usual **checked at compile time**
+- handover of variables via move or copy (delegated to ownership)
+- shared data/memory/resources via arc + mutex + refcell/cell
+- message queues (mpsc)
+
+<aside class="notes"><ul>
+<li>in embedded thread multiple tasks.</li>
+</ul>
+</aside></script></section><section ><section data-markdown><script type="text/template">
 # Syntatic Sugar
 
 In computer science, syntactic sugar is syntax within a programming language that is designed to make things easier to read or to express.
@@ -340,6 +404,15 @@ panic!("Crash with backtrace on purpose");
 
 
 </script></section><section data-markdown><script type="text/template">
+## cargo.toml
+
+```toml
+
+```
+
+
+
+</script></section><section data-markdown><script type="text/template">
 ## Interfaces modules
 
 - public/ private
@@ -353,13 +426,38 @@ panic!("Crash with backtrace on purpose");
 <li>reuse release equivalence principle</li>
 <li>semantic versioning</li>
 </ul>
-<h2 id=""></h2>
 </aside></script></section></section><section ><section data-markdown><script type="text/template">
 # Baterries included
 
 
 </script></section><section data-markdown><script type="text/template">
-## cargo
+## rustup
+
+- install/ upgrade /switch compiler/ standard library
+- manage targets (host, cross, webassembly)
+- bootstrap your environment
+
+
+</script></section><section data-markdown><script type="text/template">
+## cargo build
+
+- Build: `cargo build`
+- Test `cargo test`
+- Run `cargo run -- executable parameters`
+- In the loop: `cargo watch -x test`
+
+- Customizeable via `cargo.toml, `build.rs`
+
+<aside class="notes"><ul>
+<li>there is nothing else but cargo.toml</li>
+<li>all dependency mng is there!!!</li>
+<li>cargo extension to bump version</li>
+<li>programmatic access to cargo.toml information</li>
+<li>build.rs needed to bridge to ffi, etc.</li>
+<li>cargo extension for embedded / flashing objcopy, etc.</li>
+</ul>
+</aside></script></section><section data-markdown><script type="text/template">
+## cargo other
 
 - fmt
 - clippy
