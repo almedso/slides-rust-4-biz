@@ -23,7 +23,7 @@
 <img src="./media/Rust_programming_language_black_logo.svg" width="500" height="500"  >
 
 
-</script></section><section ><section data-markdown><script type="text/template">
+</script></section><section  data-markdown><script type="text/template">
 # Ferris the crab
 
 <img src="./media/rustacean-flat-happy.png"  >
@@ -31,8 +31,8 @@
 Unofficial mascot for Rust.
 
 
-</script></section><section data-markdown><script type="text/template">
-## When do developer a good job?
+</script></section><section ><section data-markdown><script type="text/template">
+# When do developer a good job?
 
 
 </script></section><section data-markdown><script type="text/template">
@@ -238,7 +238,11 @@ if a != b {
 # Memory Safety
 
 
-</script></section><section data-markdown><script type="text/template">
+<aside class="notes"><ul>
+<li>70% of all errors in software are to memory management</li>
+<li>Examples: buffer overflow, dangling pointers, memory leaks</li>
+</ul>
+</aside></script></section><section data-markdown><script type="text/template">
 ## Ownership
 
 ```rust
@@ -295,8 +299,7 @@ println!("a = {:?}", a);
 <aside class="notes"><ul>
 <li>References have lifetime</li>
 <li>Lifetime of a reference is not longer than lifetime of the underlying variable</li>
-<li>Ownership, borrowing, lifetime as usual <strong>checked at compile time</strong>
-```</li>
+<li>Ownership, borrowing, lifetime as usual <strong>checked at compile time</strong></li>
 </ul>
 </aside></script></section><section data-markdown><script type="text/template">
 ## Memory Safety @ embedded
@@ -478,7 +481,7 @@ panic!("Crash with backtrace on purpose");
 - Run `cargo run -- executable parameters`
 - In the loop: `cargo watch -x test`
 
-- Customizeable via `cargo.toml, `build.rs`
+- Customizeable via `cargo.toml` and `build.rs`
 
 <aside class="notes"><ul>
 <li>there is nothing else but cargo.toml</li>
@@ -502,7 +505,7 @@ panic!("Crash with backtrace on purpose");
 ## rustdoc
 
 - Dostring convineance
-  
+
 ```rust
 /// This is a docstring
 /// and syntactic sugar with markdown formatting supported
@@ -597,7 +600,6 @@ Manchester Encoding: [Crate](https://crates.io/crates/manchester-code) [Source](
 - Mixed environments: Language bindings via ffi/unsafe code
 
 
-
 </script></section><section  data-markdown><script type="text/template">
 # Disadvantages
 
@@ -618,14 +620,30 @@ Manchester Encoding: [Crate](https://crates.io/crates/manchester-code) [Source](
 
 
 </script></section><section  data-markdown><script type="text/template">
-# Not touched
+# Thank you!
 
-- all language features
-  - (e.g. async await, iterators, streams, memory management, ...)
-- Rust Foundation activities
-  - Cybersecurity working group
-  - Compiler evolution
-</script></section></div>
+
+<aside class="notes"><p>Not touched</p>
+<ul>
+<li>all language features<ul>
+<li>(e.g. async await, iterators, streams, memory management, serde, ...)</li>
+</ul>
+</li>
+<li>Rust Foundation activities<ul>
+<li>Cybersecurity working group</li>
+<li>Compiler evolution</li>
+</ul>
+</li>
+<li>Compiler strategy<ul>
+<li>Sealed rust / nightly / stable</li>
+</ul>
+</li>
+</ul>
+<p>TODO</p>
+<ul>
+<li>Explain &quot;trust in compiler&quot; --&gt; fearless coding --&gt; no stupid errors --&gt; speedup</li>
+</ul>
+</aside></script></section></div>
     </div>
 
     <script src="./dist/reveal.js"></script>
@@ -656,6 +674,7 @@ Manchester Encoding: [Crate](https://crates.io/crates/manchester-code) [Source](
         history: true,
         center: true,
         transition: 'default', // none/fade/slide/convex/concave/zoom
+        slideNumber: true,
         plugins: [
           RevealMarkdown,
           RevealHighlight,
