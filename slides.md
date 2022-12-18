@@ -17,7 +17,7 @@ revealOptions:
 
 Unofficial mascot for Rust.
 
-## When do developer a good job?
+# When do developer a good job?
 
 ## When do developer a good job?
 1. Deliver a functioning software (spec meet, bug-free)
@@ -183,6 +183,11 @@ Note:
 
 # Memory Safety
 
+
+Note:
+- 70% of all errors in software are to memory management
+- Examples: buffer overflow, dangling pointers, memory leaks
+
 ## Ownership
 
 ```rust
@@ -234,7 +239,7 @@ Note:
 - References have lifetime
 - Lifetime of a reference is not longer than lifetime of the underlying variable
 - Ownership, borrowing, lifetime as usual **checked at compile time**
-```
+
 
 ## Memory Safety @ embedded
 
@@ -389,7 +394,7 @@ Note:
 - Run `cargo run -- executable parameters`
 - In the loop: `cargo watch -x test`
 
-- Customizeable via `cargo.toml, `build.rs`
+- Customizeable via `cargo.toml` and `build.rs`
 
 Note:
 - there is nothing else but cargo.toml
@@ -411,7 +416,7 @@ Note:
 ## rustdoc
 
 - Dostring convineance
-  
+
 ```rust
 /// This is a docstring
 /// and syntactic sugar with markdown formatting supported
@@ -485,7 +490,6 @@ Manchester Encoding: [Crate](https://crates.io/crates/manchester-code) [Source](
 - Not for prototyping
 - Mixed environments: Language bindings via ffi/unsafe code
 
-
 # Disadvantages
 
 - Steep learning curve
@@ -501,10 +505,19 @@ Manchester Encoding: [Crate](https://crates.io/crates/manchester-code) [Source](
 - One community driven evolutionary style guide that can be enforced
   cargo
 
-# Not touched
+# Thank you!
 
+
+Note:
+
+Not touched
 - all language features
-  - (e.g. async await, iterators, streams, memory management, ...)
+  - (e.g. async await, iterators, streams, memory management, serde, ...)
 - Rust Foundation activities
   - Cybersecurity working group
   - Compiler evolution
+- Compiler strategy
+  - Sealed rust / nightly / stable
+
+TODO
+- Explain "trust in compiler" --> fearless coding --> no stupid errors --> speedup
